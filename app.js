@@ -68,7 +68,6 @@ getData(" https://api.github.com/users/bibekgupta3333").then((users) => {
   // event of next button start
   function loadNext() {
     pageCount += 1;
-    console.log(pageCount, lastPageCount);
     if (pageCount === lastPageCount) {
       pageCount = lastPageCount;
       document.getElementById("next").style.visibility = "hidden";
