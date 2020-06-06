@@ -1,0 +1,175 @@
+html {
+  height: 100%;
+}
+/* #6c3 */
+/* #f00 */
+@media (max-width: 1400px) {
+  body {
+    margin: 0;
+    overflow: hidden;
+    font-family: "Piedra", cursive;
+    letter-spacing: normal;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    overflow: auto;
+  }
+}
+
+/* bg-animation start */
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    #ffd900 50%,
+    #aaaaaa 20%,
+    #005daa 50%
+  );
+
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+/* bg-animation end */
+/* section css  start*/
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover {
+  transform: scale(1.05);
+}
+a #next,
+a #prev {
+  width: 100px;
+  transition: all 0.3s ease-in-out;
+}
+#next:hover,
+#prev:hover {
+  transform: scale(1.1);
+}
+#heading {
+  background: -webkit-linear-gradient(#ffd900, #005daa);
+}
+.box,
+img {
+  transition: all 0.3s ease-in-out;
+}
+
+.box:hover,
+img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  background: rgba(2, 152, 252, 0.897);
+}
+/* section css end */
+
+/* loader start */
+
+@media (max-width: 1400px) {
+  .loader {
+    animation: spin 1s infinite linear;
+    border: solid 0.8vmin transparent;
+    border-radius: 50%;
+    border-right-color: #ffd900;
+    border-top-color: #09f;
+    box-sizing: border-box;
+    height: 7vmin;
+    left: calc(42% - 10vmin);
+    position: fixed;
+    top: 0;
+    width: 7vmin;
+    z-index: 1;
+  }
+  .loader:before {
+    animation: spin 2s infinite linear;
+    border: solid 0.8vmin transparent;
+    border-radius: 50%;
+    border-right-color: #3cf;
+    border-top-color: #3cf;
+    box-sizing: border-box;
+    content: "";
+    height: 5vmin;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 5vmin;
+  }
+  .loader:after {
+    animation: spin 3s infinite linear;
+    border: solid 0.8vmin transparent;
+    border-radius: 50%;
+    border-right-color: #6ff;
+    border-top-color: #91e;
+    box-sizing: border-box;
+    content: "";
+    height: 2vmin;
+    left: 42%;
+    position: absolute;
+    top: 0;
+    width: 2vmin;
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .loader {
+    left: calc(35% - 10vmin);
+  }
+
+  .loader:after {
+    left: 35%;
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+@media (max-width: 600px) {
+  .loader {
+    left: calc(30% - 10vmin);
+  }
+
+  .loader:after {
+    left: 30%;
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* loader end */
